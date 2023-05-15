@@ -1,0 +1,116 @@
+// banner part start..
+.banner {
+  background: rgba(107, 145, 66, 0.1);
+  padding-top: 230px;
+  position: relative;
+
+  @include desktop {
+    padding-top: 150px;
+  }
+
+  .leaf {
+    position: absolute;
+    left: 6%;
+    top: 13%;
+    z-index: -1;
+    filter: blur(5px);
+    transform: scale(0.8);
+
+    img {
+      animation: anim-updown 5s infinite;
+    }
+
+    @include desktop {
+      display: none;
+    }
+
+    @include desktop-lg {
+      transform: scale(0.5);
+    }
+  }
+
+  .leaf2 {
+    position: absolute;
+    right: 13%;
+    top: 18%;
+    z-index: -1;
+    filter: blur(2px);
+    transform: rotate(5deg) scale(0.8);
+
+    img {
+      animation: anim-updown 5s infinite;
+    }
+
+    @include desktop {
+      display: none;
+    }
+
+    @include desktop-lg {
+      transform: scale(0.5);
+    }
+  }
+}
+
+@keyframes anim-updown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.counter-wrapper {
+  position: absolute;
+  right: 110px;
+  top: -90px;
+  z-index: 1;
+  padding: 18px 28px;
+  text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.4) 100%);
+  backdrop-filter: blur(6px);
+  border-radius: 8.86914px;
+
+  .counter-item {
+    h3 {
+      color: $color-secondary;
+      font-weight: 700;
+    }
+
+    p {
+      color: #838383;
+      font-weight: 600;
+    }
+  }
+
+  @include desktop-lg {
+    right: 0;
+    top: 92%;
+  }
+}
+
+// banner part end
+
+// about section start
+
+.anima-rotate {
+  animation: anim-rotate 8s infinite;
+}
+
+.food-delive {
+  position: relative;
+
+  .delivery-person {
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: anim-left-right 5s infinite;
+  }
+}
+
+// about section end

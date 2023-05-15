@@ -1,0 +1,409 @@
+body {
+  background-color: $body-color;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: lighten($color: $color-primary, $amount: 10);
+  color: $white;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a,
+button,
+select {
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+a:hover {
+  color: $color-primary;
+}
+
+.slick-slide {
+  outline: 0;
+}
+
+select {
+  background: transparent;
+  border: none;
+  font-weight: 500;
+}
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  &-sm {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &-title {
+    margin-bottom: 30px;
+  }
+}
+
+.bg-cover {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.border-default {
+  border-color: $border-color !important;
+}
+
+/* overlay */
+.overlay {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $black;
+    opacity: 0.5;
+  }
+}
+
+.outline-0 {
+  outline: 0 !important;
+}
+
+.bg-primary {
+  background: $color-primary !important;
+}
+
+.text-primary {
+  color: $color-primary !important;
+}
+
+.text-default {
+  color: $text-color !important;
+}
+
+.zindex-1 {
+  z-index: 1;
+}
+
+// swiper common style
+:root {
+  --swiper-navigation-size: 18px;
+  --swiper-navigation-color: $white;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  padding: 25px;
+  background: $color-primary;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  font-size: 0px;
+  background: $color-primary;
+  opacity: 0.2;
+  border-radius: 10px;
+
+  &-active {
+    opacity: 1;
+    width: 20px;
+  }
+}
+
+.input-group {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 7px;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background-color: $color-secondary;
+    z-index: 1;
+
+    @include desktop {
+      top: 12px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .form-control {
+    padding: 17px 75px 17px;
+    border-radius: 50px !important;
+
+    @include desktop {
+      padding: 9px 35px 9px;
+    }
+
+    &:focus {
+      box-shadow: none;
+      z-index: 0;
+    }
+
+    &::placeholder {
+      color: $text-light;
+      font-size: 22px;
+      font-weight: 500;
+      font-family: $font-primary;
+
+      @include desktop {
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .btn {
+    border-radius: 50px !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include desktop{
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+.btn {
+  i {
+    font-size: 18px;
+  }
+}
+
+.shadow {
+  filter: drop-shadow(0px 12.2182px 27.0545px rgba(0, 0, 0, 0.15));
+  -webkit-filter: drop-shadow(0px 12.2182px 27.0545px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes anim-rotate {
+  0% {
+    transform: rotate(30deg);
+  }
+
+  50% {
+    transform: rotate(55deg);
+  }
+
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+
+@keyframes anim-left-right {
+  0% {
+    transform: translateX(-200px);
+  }
+
+  100% {
+    transform: translateX(500px);
+  }
+}
+
+// content style
+.content {
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    color: $text-dark;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  ol,
+  ul {
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+    margin-bottom: 20px;
+    list-style-type: none;
+
+    li {
+      padding-left: 20px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background: $color-primary;
+        left: 3px;
+        top: 8px;
+      }
+    }
+  }
+
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid $border-color;
+  }
+
+  table td,
+  table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    margin-bottom: 0;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+  }
+
+  th {
+    font-weight: 500;
+  }
+
+  thead {
+    background: $light;
+    margin-bottom: 0;
+
+    tr {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  tbody {
+    background: lighten($color: $light, $amount: 5);
+    margin-bottom: 0;
+  }
+
+  .notices {
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .notices p {
+    padding: 10px;
+    margin-bottom: 0;
+  }
+
+  .notices p::before {
+    position: absolute;
+    top: 2px;
+    color: $white;
+    font-family: $font-icon;
+    font-weight: 900;
+    content: "\f05a";
+    left: 10px;
+  }
+
+  .notices.note p {
+    border-top: 30px solid #6ab0de;
+    background: #e3f4ff;
+  }
+
+  .notices.note p::after {
+    content: "Note";
+    position: absolute;
+    top: 2px;
+    color: $white;
+    left: 2rem;
+  }
+
+  .notices.tip p {
+    border-top: 30px solid #78c578;
+    background: #e2ffe2;
+  }
+
+  .notices.tip p::after {
+    content: "Tip";
+    position: absolute;
+    top: 2px;
+    color: $white;
+    left: 2rem;
+  }
+
+  .notices.info p {
+    border-top: 30px solid #f0b37e;
+    background: #ffedde;
+  }
+
+  .notices.info p::after {
+    content: "Info";
+    position: absolute;
+    top: 2px;
+    color: $white;
+    left: 2rem;
+  }
+
+  .notices.warning p {
+    border-top: 30px solid #e06f6c;
+    background: #ffdad8;
+  }
+
+  .notices.warning p::after {
+    content: "Warning";
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    left: 2rem;
+  }
+
+  blockquote {
+    font-size: 20px !important;
+    color: $text-color;
+    padding: 20px 40px;
+    border-left: 2px solid $color-primary;
+    margin: 40px 0;
+    font-weight: bold;
+    background: $light;
+
+    p {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  pre {
+    display: block;
+    padding: 9.5px;
+    margin: 10px 0px 10px;
+    white-space: pre-wrap;
+  }
+
+  code {
+    margin-bottom: 0 !important;
+    font-size: 100%;
+  }
+}
