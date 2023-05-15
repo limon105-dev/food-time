@@ -76,16 +76,14 @@
   backdrop-filter: blur(6px);
   border-radius: 8.86914px;
 
-  .counter-item {
-    h3 {
-      color: $color-secondary;
-      font-weight: 700;
-    }
+  h3 {
+    color: $color-secondary;
+    font-weight: 700;
+  }
 
-    p {
-      color: #838383;
-      font-weight: 600;
-    }
+  p {
+    color: #838383;
+    font-weight: 600;
   }
 
   @include desktop-lg {
@@ -104,6 +102,7 @@
 
 .food-delive {
   position: relative;
+  overflow: hidden;
 
   .delivery-person {
     position: absolute;
